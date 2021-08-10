@@ -192,6 +192,7 @@ void *row_slot(Table *table, u_int32_t row_num)
 
 ExecuteResult execute_insert(Statement *statement, Table *table)
 {
+    // printf("Capicity: {%d}/ {%d}", table->num_rows, TABLE_MAX_ROWS);
     if (table->num_rows >= TABLE_MAX_ROWS)
     {
         return EXECUTE_TABLE_FULL;
